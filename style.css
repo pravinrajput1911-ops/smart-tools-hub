@@ -86,4 +86,44 @@ footer{
   text-align:center;
   padding:20px;
   margin-top:30px;
-    }
+   }
+/* ===== Password Generator ===== */
+.password-generator {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.password-generator h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.password-generator input {
+  width: 90%;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  outline: none;
+}
+
+.password-generator button {
+  padding: 12px 20px;
+  margin: 8px;
+  border: none;
+  border-radius: 8px;
+  background: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.password-generator button:hover {
+  background: #0056b3;
+}
