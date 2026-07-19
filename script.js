@@ -45,9 +45,13 @@ function generateQR() {
 
     document.getElementById("qrcode").innerHTML = "";
 
-    new QRCode(document.getElementById("qrcode"), {
-        text: text,
-        width: 200,
-        height: 200
-    });
+    const qrBox = document.getElementById("qrcode");
+
+qrBox.innerHTML = "";
+
+const qrcode = new QRCode(qrBox, {
+    text: text,
+    width: 200,
+    height: 200
+});
 }
