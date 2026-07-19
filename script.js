@@ -55,3 +55,23 @@ const qrcode = new QRCode(qrBox, {
     height: 200
 });
 }
+function downloadQR() {
+    const img = document.querySelector("#qrcode img");
+    const canvas = document.querySelector("#qrcode canvas");
+
+    let url;
+
+    if (img) {
+        url = img.src;
+    } else if (canvas) {
+        url = canvas.toDataURL("image/png");
+    } else {
+        alert("Please generate a QR Code first!");
+        return;
+    }
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "QRCode.png";
+    a.click();
+}
