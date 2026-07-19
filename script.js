@@ -33,3 +33,21 @@ function copyPassword() {
 
   alert("✅ Password Copied!");
   }
+ // ===== QR Code Generator =====
+
+function generateQR() {
+    const text = document.getElementById("qrText").value;
+
+    if (text === "") {
+        alert("Please enter text or URL");
+        return;
+    }
+
+    document.getElementById("qrcode").innerHTML = "";
+
+    new QRCode(document.getElementById("qrcode"), {
+        text: text,
+        width: 200,
+        height: 200
+    });
+}
