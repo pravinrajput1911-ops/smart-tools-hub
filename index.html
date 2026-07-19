@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+hi bh<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -97,7 +97,46 @@
     <div id="qrcode"></div>
 </div>
 
-<!-- QR Code Generator End -->
+<!-- QR Code Generator End --> 
+  <!-- ===== Calculator Start ===== -->
+
+<div class="calculator">
+
+    <h2>🧮 Smart Calculator</h2>
+
+    <input type="text" id="display" placeholder="0" readonly>
+
+    <div class="calc-buttons">
+
+        <button onclick="clearDisplay()" class="operator">AC</button>
+        <button onclick="deleteLast()" class="operator">⌫</button>
+        <button onclick="appendValue('%')" class="operator">%</button>
+        <button onclick="appendValue('/')" class="operator">÷</button>
+
+        <button onclick="appendValue('7')">7</button>
+        <button onclick="appendValue('8')">8</button>
+        <button onclick="appendValue('9')">9</button>
+        <button onclick="appendValue('*')" class="operator">×</button>
+
+        <button onclick="appendValue('4')">4</button>
+        <button onclick="appendValue('5')">5</button>
+        <button onclick="appendValue('6')">6</button>
+        <button onclick="appendValue('-')" class="operator">−</button>
+
+        <button onclick="appendValue('1')">1</button>
+        <button onclick="appendValue('2')">2</button>
+        <button onclick="appendValue('3')">3</button>
+        <button onclick="appendValue('+')" class="operator">+</button>
+
+        <button onclick="appendValue('0')" class="zero">0</button>
+        <button onclick="appendValue('.')">.</button>
+        <button onclick="calculateResult()" class="equal">=</button>
+
+    </div>
+
+</div>
+
+<!-- ===== Calculator End ===== -->
 
 
 <footer>
