@@ -232,3 +232,52 @@ footer{
 .zero{
     grid-column:span 2;
 }
+/* ===== Image Compressor ===== */
+
+.image-compressor{
+    max-width:600px;
+    margin:40px auto;
+    padding:25px;
+    background:#fff;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+    text-align:center;
+}
+
+.image-compressor h2{
+    margin-bottom:20px;
+}
+
+.image-compressor input[type=file]{
+    width:100%;
+    margin:15px 0;
+}
+
+.image-compressor input[type=range]{
+    width:100%;
+}
+
+.image-compressor button{
+    background:#007bff;
+    color:#fff;
+    border:none;
+    padding:12px 25px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    margin-top:15px;
+}
+
+.image-compressor button:hover{
+    background:#0056b3;
+}
+
+#preview{
+    margin-top:20px;
+    max-width:100%;
+    border-radius:12px;
+}
+
+#downloadBtn{
+    display:none;
+}
