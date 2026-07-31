@@ -138,7 +138,37 @@ hi bh<!DOCTYPE html>
 
 <!-- ===== Calculator End ===== -->
 
+<!-- ===== Image Compressor Start ===== -->
 
+<section class="image-compressor">
+    <h2>🖼️ Image Compressor</h2>
+
+    <input type="file" id="imageInput" accept="image/*">
+
+    <br><br>
+
+    <label>Compression Quality</label>
+    <input type="range" id="quality" min="10" max="100" value="70">
+
+    <p id="qualityValue">70%</p>
+
+    <button onclick="compressImage()">
+        Compress Image
+    </button>
+
+    <br><br>
+
+    <img id="preview" style="max-width:100%;display:none;border-radius:12px;">
+
+    <br><br>
+
+    <a id="downloadBtn" style="display:none;">
+        <button>Download Compressed Image</button>
+    </a>
+
+</section>
+
+<!-- ===== Image Compressor End ===== -->
 <footer>
 <p>© 2026 Smart Tools Hub | All Rights Reserved.</p>
 </footer>
