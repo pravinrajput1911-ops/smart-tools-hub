@@ -98,3 +98,64 @@ function calculateResult() {
         display.value = "Error";
     }
 }
+// ===== Image Compressor =====
+
+let compressedBlob = null;
+
+document.getElementById("quality").addEventListener("input", function () {
+    document.getElementById("qualityValue").innerText = this.value + "%";
+});
+
+function compressImage() {
+
+    const file = document.getElementById("imageInput").files[0];
+
+    if (!file) {
+        alert("Please select an image.");
+        return;
+    }
+
+    const quality =
+        document.getElementById("quality").value / 100;
+
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+
+        const img = new Image();
+
+        img.onload = function () {
+
+            const canvas = document.createElement("canvas");
+            const ctx = canvas.getContext("2d");
+
+            canvas.width = img.width;
+            canvas.height = img.height;
+
+            ctx.drawImage(img, 0, 0);
+
+            canvas.toBlob(function (blob) {
+
+                compressedBlob = blob;
+
+                const url = URL.createObjectURL(blob);
+
+                document.getElementById("preview").src = url;
+                document.getElementById("preview").style.display = "block";
+
+                const download =
+                    document.getElementById("downloadBtn");
+
+                download.href = url;
+                download.download = "compressed-image.jpg";
+                download.style.display = "inline";
+
+            }, "image/jpeg", quality);
+
+        };
+
+        img.src = e.target.result;
+    };
+
+    reader.readAsDataURL(file);
+}
