@@ -159,3 +159,14 @@ function compressImage() {
 
     reader.readAsDataURL(file);
 }
+function downloadImage() {
+    if (!compressedBlob) {
+        alert("Please compress image first!");
+        return;
+    }
+
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(compressedBlob);
+    link.download = "compressed-image.jpg";
+    link.click();
+}
