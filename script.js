@@ -170,3 +170,40 @@ function downloadImage() {
     link.download = "compressed-image.jpg";
     link.click();
 }
+// ===== PDF Merge Tool =====
+
+async function mergePDFs() {
+    const files = document.getElementById("pdfFiles").files;
+
+    if (files.length < 2) {
+        alert("Please select at least 2 PDF files.");
+        return;
+    }
+
+    const mergedPdf = await PDFLib.PDFDocument.create();
+
+    for (const file of files) {
+        const bytes = await file.arrayBuffer();
+        const pdf = await PDFLib.PDFDocument.load(bytes);
+
+        const pages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
+
+        pages.forEach(page => {
+            mergedPdf.addPage(page);
+        });
+    }
+
+    const mergedBytes = await mergedPdf.save();
+
+    const blob = new Blob([mergedBytes], {
+        type: "application/pdf"
+    });
+
+    const url = URL.createObjectURL(blob);
+
+    const download = document.getElementById("downloadMergedPDF");
+
+    download.href = url;
+    download.download = "Merged-PDF.pdf";
+    download.style.display = "inline-block";
+}
